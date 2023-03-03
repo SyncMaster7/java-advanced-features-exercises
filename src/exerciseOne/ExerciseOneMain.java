@@ -11,5 +11,7 @@ public class ExerciseOneMain {
         String providedEmail = sc.nextLine();
 
         UserValidator userVal = new UserValidator();
+        String results = userVal.validateEmails("kermo@icloud.com");
+        System.out.println(results);
     }
 }

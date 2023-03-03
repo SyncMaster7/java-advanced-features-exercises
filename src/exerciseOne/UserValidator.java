@@ -2,7 +2,7 @@ package exerciseOne;
 
 public class UserValidator {
 
-    public String validateEmails() {
+    public String validateEmails(String eMail) {
         return null;
     }
 
@@ -10,13 +10,25 @@ public class UserValidator {
     // Open Web Application Security Project®, OWASP
     private static final String REGEX = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 
-    class Email {
-        private final String eMail;
+    static class Email {
+        private String eMail;
         private final String altEmail;
 
-        public Email(final String eMail, final String altEmail) {
-            this.eMail = eMail;
+        Email(String altEmail) {
             this.altEmail = altEmail;
         }
+
+        public String[] Email(final String eMail) {
+
+            if (eMail == null || eMail.isEmpty()) {
+                this.eMail = "unknown";
+            } else {
+                this.eMail = eMail;
+            }
+
+            Email givenEmail = new Email(eMail);
+            return new String[]{givenEmail.eMail};
+        }
+
     }
 }
